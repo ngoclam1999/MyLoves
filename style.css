@@ -99,13 +99,6 @@ ul {
     margin-bottom: 15px;
 }
 
-/* Activities Container full width bên dưới */
-.activities-container {
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
-
 /* Footer */
 footer {
     background-color: #003366;
