@@ -82,7 +82,7 @@ h2 {
     letter-spacing: 1px;
 }
 
-/* Cấu hình danh sách bullet giống PDF */
+/* Cấu hình danh sách bullet với phân cấp giống PDF */
 ul {
     list-style: disc;
     padding-left: 25px;
@@ -92,6 +92,12 @@ ul {
     ul li {
         margin-bottom: 5px;
         line-height: 1.4;
+    }
+
+    /* Cho danh sách phân cấp con (nested list) */
+    ul.nested {
+        padding-left: 20px;
+        list-style-type: circle;
     }
 
 /* Các work-section trong Work Experience */
