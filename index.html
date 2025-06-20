@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Em Bé</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="enter-screen">
+        <button id="enter-button">Nhấn vào đây để mở thiệp nha ❤️</button>
+    </div>
+
+    <div id="main-content" class="hidden">
+        <div class="hearts-container"></div>
+        <button id="music-toggle">🔇</button>
+        <audio id="background-music" loop>
+            <source src="assets/music.mp3" type="audio/mpeg">
+        </audio>
+
+        <main class="card">
+            <h1 class="title">Gửi Em Bé</h1>
+
+            <!-- KHU VỰC SLIDESHOW ẢNH - THAY THẾ CHO GIF -->
+            <div id="slideshow-container">
+                <div id="slides-wrapper">
+                    <!-- Ảnh sẽ được JS chèn vào đây -->
+                </div>
+                <a class="prev">❮</a>
+                <a class="next">❯</a>
+                <div id="slide-counter"></div>
+            </div>
+
+            <p class="message-short">
+                Nhân ngày sinh nhật của em, chúc em tất cả những điều tốt đẹp nhất!
+            </p>
+            <button id="open-modal-button" class="heart-button">Bấm dô đây nè</button>
+        </main>
+
+        <div id="letter-modal" class="modal-overlay">
+            <div class="modal-content">
+                <span id="close-modal-button" class="close-button">×</span>
+                <h2>Lời nhắn từ trái tim anh 💌</h2>
+                <p>
+</br>
+                    <b>Gửi đến em – người anh yêu bằng cả trái tim…</b>
+</br>
+Hôm nay là một ngày thật đặc biệt <b>– 2000</b> ngày kể từ khoảnh khắc định mệnh chúng mình gặp nhau. Gần 6 năm trôi qua, có biết bao kỷ niệm, nụ cười, những lần giận hờn, và cả những cái nắm tay thật chặt giữa bão giông cuộc đời.
+</br>
+Anh không biết diễn đạt hết cảm xúc của mình bằng lời, nhưng anh muốn em biết rằng:
+</br>
+💗 Mỗi ngày có em là một ngày anh thấy biết ơn cuộc sống.
+</br>
+💗 Mỗi khoảnh khắc bên em là một món quà mà anh luôn trân trọng.
+</br>
+💗 Mỗi lần em cười, cả thế giới của anh như bừng sáng.
+</br>
+Em chính là điều tuyệt vời nhất mà anh có được trong cuộc đời này. Dù thời gian có trôi, dù bao nhiêu thử thách phía trước, anh vẫn sẽ luôn chọn em – như ngày đầu tiên.
+</br>
+Cảm ơn em vì đã ở lại. Cảm ơn em vì đã yêu anh. Cảm ơn em vì đã là chính em – dịu dàng, mạnh mẽ và tuyệt vời.
+</br>
+Chúc cho chúng ta sẽ cùng nhau đi tiếp… không chỉ 2000 ngày… mà là cả một đời.
+</br>
+<b>Anh yêu em – mãi mãi và hơn thế nữa. ❤️</b>
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
