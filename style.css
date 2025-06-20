@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --bg-color: #fce4ec;
     --card-bg: rgba(255, 255, 255, 0.85);
     --primary-text: #333;
@@ -8,7 +8,11 @@
     --shadow-color: rgba(0, 0, 0, 0.15);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: var(--body-font);
@@ -24,10 +28,15 @@ body {
     color: var(--primary-text);
 }
 
-.hidden { display: none !important; }
+.hidden {
+    display: none !important;
+}
 
 /* Màn hình chờ */
-#enter-screen { text-align: center; }
+#enter-screen {
+    text-align: center;
+}
+
 #enter-button {
     font-family: var(--body-font);
     font-size: 1.2rem;
@@ -40,6 +49,7 @@ body {
     box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
     transition: transform 0.2s, box-shadow 0.2s;
 }
+
 #enter-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(233, 30, 99, 0.5);
@@ -61,11 +71,44 @@ body {
     z-index: 1001;
     transition: background 0.3s;
 }
-#music-toggle:hover { background: white; }
-.hearts-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-.heart { position: absolute; bottom: -50px; font-size: 2rem; color: var(--heart-color); opacity: 0; animation: floatUp 10s linear infinite; }
-.heart::before { content: '❤️'; }
-@keyframes floatUp { 0% { transform: translateY(0); opacity: 0.7; } 100% { transform: translateY(-100vh); opacity: 0; } }
+
+#music-toggle:hover {
+    background: white;
+}
+
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 2rem;
+    color: var(--heart-color);
+    opacity: 0;
+    animation: floatUp 10s linear infinite;
+}
+
+.heart::before {
+    content: '❤️';
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
 
 /* Khung chính */
 .card {
@@ -75,12 +118,22 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px var(--shadow-color);
     text-align: center;
-    max-width: 500px;
-    width: 100%;
+    max-width: 400px;
+    width: 90%;
     animation: fadeIn 1s ease-out;
     z-index: 1;
 }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .title {
     font-family: var(--title-font);
@@ -118,24 +171,55 @@ body {
     z-index: 1;
 }
 
-/* Nút Previous & Next */
+/* Nút Previous & Next - PHIÊN BẢN NÂNG CẤP */
 .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: auto;
-    padding: 16px;
+    
+    /* Chuyển sang hình tròn */
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    
     color: white;
-    font-weight: bold;
     font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
+    
+    /* Căn giữa mũi tên bên trong nút */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     user-select: none;
     z-index: 2;
+
+    /* Hiệu ứng mờ/hiện */
+    opacity: 0; /* Mặc định ẩn đi */
+    transition: opacity 0.3s ease, background-color 0.3s ease;
 }
-.next { right: 0; }
-.prev:hover, .next:hover { background-color: rgba(0, 0, 0, 0.6); }
+
+/* Khi di chuột vào TOÀN BỘ slideshow, các nút sẽ hiện ra */
+#slideshow-container:hover .prev,
+#slideshow-container:hover .next {
+    opacity: 1;
+}
+
+.next {
+    right: 10px; /* Thêm khoảng cách với cạnh phải */
+}
+
+.prev {
+    left: 10px; /* Thêm khoảng cách với cạnh trái */
+    /* Căn lại ký tự mũi tên cho cân đối */
+    padding-right: 2px;
+}
+
+/* Đổi màu nền đậm hơn khi di chuột trực tiếp vào nút */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
 
 /* Bộ đếm ảnh */
 #slide-counter {
@@ -152,7 +236,11 @@ body {
 }
 /* -------------------- */
 
-.message-short { font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px; }
+.message-short {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
 
 .heart-button {
     font-family: var(--body-font);
@@ -167,12 +255,26 @@ body {
     transition: transform 0.2s ease-in-out;
     animation: pulse 2s infinite;
 }
-@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 
 /* Cửa sổ Modal */
 .modal-overlay {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.7);
     display: none;
     justify-content: center;
@@ -180,30 +282,66 @@ body {
     z-index: 1000;
     animation: fadeInModal 0.5s;
 }
-.modal-overlay.visible { display: flex; }
-@keyframes fadeInModal { from { opacity: 0; } to { opacity: 1; } }
+
+.modal-overlay.visible {
+    display: flex;
+}
+
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 .modal-content {
     background: white;
     padding: 40px;
     border-radius: 15px;
-    max-width: 650px;
+    max-width: 500px;
     width: 90%;
     text-align: left;
     position: relative;
     animation: slideInModal 0.5s ease-out;
 }
-@keyframes slideInModal { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-.modal-content h2 { font-family: var(--body-font); font-weight: bold; font-size: 1.8rem; color: var(--heart-color); margin-bottom: 20px; text-align: center; }
-.modal-content p { font-size: 1.1rem; line-height: 1.8; }
+@keyframes slideInModal {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content h2 {
+    font-family: var(--body-font);
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: var(--heart-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
 
 .close-button {
     position: absolute;
-    top: 15px; right: 20px;
+    top: 15px;
+    right: 20px;
     font-size: 2rem;
     color: #aaa;
     cursor: pointer;
     transition: color 0.2s;
 }
-.close-button:hover { color: #333; }
+
+.close-button:hover {
+    color: #333;
+}
